@@ -1,0 +1,43 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Ingreso de producto.</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container"  height="10%">
+        <label for="username">Imagen del producto:</label>
+        <br>
+        <input type="text">
+      </div>
+
+        <form>
+          <div class="mb-1">
+            <label for="recipient-name" class="col-form-label">Id</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="mb-1">
+            <label for="message-text" class="col-form-label">Nombre</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+          <div class="mb-1">
+            <label for="message-text" class="col-form-label">Cantidad:</label>
+            <input type="number" class="form-control" id="cantidad">
+
+          </div>
+          <div class="mb-1">
+            <label for="message-text" class="col-form-label">Descripcion</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+        <button type="#" class="btn btn-light"><input type="file" name="" accept=".pdf,.jpg,.png" multiple /></button>
+        <div class="modal-footer">
+          <app-modalconfirmacion></app-modalconfirmacion>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+            data-bs-target="#exampleModal">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>

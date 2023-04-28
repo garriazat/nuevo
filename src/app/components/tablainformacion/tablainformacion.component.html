@@ -1,0 +1,96 @@
+<div class="row uno" style="background-color: rgb(133, 176, 231); height: 8vh;">
+  <div class="col-6 ">
+    <button class="btn btn-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+      aria-controls="offcanvasExampleLabel"><span class="navbar-toggler-icon"><img src="../../../assets/lineas.png"
+          alt="#"></span></button>
+  </div>
+  <div class="col-5">
+
+  </div>
+
+  
+  <div class="col-1 me-auto">
+    <button class="btn btn-primary"><img src="../../../assets/turn-off.png" alt="#" style="height: 70%;"></button>
+  </div>
+</div>
+<nav class="navbar bg-body-tertiary">
+  <div class="container-fluid">
+    <form class="d-flex" role="search">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Sistema de Inventario</h5>
+
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+
+  <hr width=100%>
+  <div class="">
+    <a class="dropdown-item" href="#"> <img src="../../../assets/usuario (1).png" alt="#"> Información del usuario</a>
+    <br>
+    <br>
+    <a class="dropdown-item" href="#"> <img src="../../../assets/listas-de-control (1).png" alt="#"> Inventario
+      Actual</a>
+    <br>
+    <br>
+    <a class="dropdown-item" href="#"> <img src="../../../assets/agregar.png" alt=""> Agregar productos </a>
+
+  </div>
+</div>
+
+<div class="container mt-5 me-auto ">
+  <app-modalproductonuevo></app-modalproductonuevo>
+  <div class="row">
+    <div class="col-1">
+      <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"> <img
+          src="../../../assets/anadir.png" alt=""> NUEVO</button>
+    </div>
+    <div class="col-1">
+      <button type="button" class="btn btn-outline-secondary"> <img src="../../../assets/en-stock.png" alt="">
+        STOCK</button>
+    </div>
+  </div>
+  <hr width=100%>
+
+  <app-modaleditar></app-modaleditar>
+  <app-modaleliminar></app-modaleliminar>
+  <div class="row dos" style="background-color: rgba(75, 83, 87, 0.342);">
+    <table class="table table-secondary table-striped mt-5">
+      <thead>
+        <tr>
+          <th scope="col">id del producto</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Cantidad</th>
+          <th scope="col">Editar</th>
+          <th scope="col">Eliminar</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let producto of array">
+          <th scope="row">
+            {{producto.id}}
+          </th>
+          <td>
+            {{producto.Nombre}}
+          </td>
+          <td>
+            {{producto.cantidad}}
+          </td>
+
+          <td> <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+              data-bs-target="#editarModal"> <img src="../../../assets/lapiz.png" alt="#"> </button> </td>
+          <td> <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop" (click)="obtenerid(producto.id)"> <img src="../../../assets/trash.png"
+                alt="#"> </button></td>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
